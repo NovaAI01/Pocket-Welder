@@ -1,0 +1,64 @@
+{
+  "case_id": "case_007",
+  "drawing_id": "image_007",
+  "source_file": "image_007.png",
+  "status": "ground_truth_manual",
+  "region_description": "Fillet weld callout with process 141 and all-around indicator.",
+  "human_observation": {
+    "visible_text": "141",
+    "symbol_guess": "fillet",
+    "side_guess": "arrow_side",
+    "contour_guess": null,
+    "size_mm": null,
+    "length_mm": null,
+    "pitch_mm": null,
+    "count": null,
+    "all_around": true,
+    "process_code": "141",
+    "visible_symbol_components": [
+      {
+        "component_id": "C1",
+        "description": "triangle weld symbol",
+        "guess": "fillet"
+      }
+    ]
+  },
+  "notes": [
+    "Seventh benchmark case.",
+    "Process 141 is explicitly shown in weld callout.",
+    "All-around weld indicated."
+  ],
+  "expected_output": {
+    "drawing_id": "image_007",
+    "source_file": "image_007.png",
+    "notes": [
+      "Manual extraction from real drawing",
+      "Reference text preserved without interpretation",
+      "Single fillet weld symbol observed"
+    ],
+    "welds": [
+      {
+        "joint_id": "J1",
+        "process": "141",
+        "symbol": "fillet",
+        "side": "arrow_side",
+        "contour": null,
+        "size_mm": null,
+        "length_mm": null,
+        "pitch_mm": null,
+        "finish": null,
+        "count": null,
+        "reference_text": "141",
+        "confidence": 0.78,
+        "notes": [
+          "Arrow indicates arrow side",
+          "Single fillet weld symbol identified",
+          "All-around weld indicated",
+          "Process code specified in weld callout context",
+          "No explicit size shown",
+          "No explicit length or pitch shown"
+        ]
+      }
+    ]
+  }
+}

@@ -69,6 +69,9 @@ def build_notes(obs: dict) -> list[str]:
     if obs.get("all_around"):
         notes.append("All-around weld indicated")
 
+    if obs.get("process_code"):
+        notes.append("Process code specified in weld callout context")
+
     contour = obs.get("contour_guess")
     if contour == "flush_one_side":
         notes.append("Flush required on one side")
@@ -130,7 +133,7 @@ def build_output(case_data: dict) -> dict:
 
     weld = {
         "joint_id": "J1",
-        "process": None,
+        "process": obs.get("process_code"),
         "symbol": derive_symbol(obs),
         "side": obs.get("side_guess"),
         "contour": obs.get("contour_guess"),
