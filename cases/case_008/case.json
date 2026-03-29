@@ -1,0 +1,28 @@
+{
+  "case_id": "case_008",
+  "drawing_id": "image_008",
+  "source_file": "image_008.png",
+  "status": "ground_truth_manual",
+  "region_description": "Drawing containing multiple weld callouts in different regions.",
+  "human_observation": {
+    "visible_text": "135 Stitch / 135",
+    "multiple_callouts": true,
+    "callout_count": 2,
+    "notes": "At least two separate weld callouts are visible in different regions of the drawing."
+  },
+  "notes": [
+    "Eighth benchmark case.",
+    "Multiple weld callouts are present.",
+    "Current system only supports single weld extraction."
+  ],
+  "expected_output": {
+    "drawing_id": "image_008",
+    "source_file": "image_008.png",
+    "notes": [
+      "Manual extraction from real drawing",
+      "Multiple weld callouts detected",
+      "Extraction not yet supported for multiple joints"
+    ],
+    "welds": []
+  }
+}

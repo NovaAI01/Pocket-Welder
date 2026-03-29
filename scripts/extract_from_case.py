@@ -131,6 +131,18 @@ def derive_symbol(obs: dict):
 def build_output(case_data: dict) -> dict:
     obs = case_data["human_observation"]
 
+    if obs.get("multiple_callouts"):
+        return {
+            "drawing_id": case_data["drawing_id"],
+            "source_file": case_data["source_file"],
+            "notes": [
+                "Manual extraction from real drawing",
+                "Multiple weld callouts detected",
+                "Extraction not yet supported for multiple joints"
+            ],
+            "welds": []
+        }
+
     weld = {
         "joint_id": "J1",
         "process": obs.get("process_code"),
