@@ -1,0 +1,61 @@
+{
+  "case_id": "case_002",
+  "drawing_id": "image_002",
+  "source_file": "image_002.jpg",
+  "status": "ground_truth_manual",
+  "region_description": "Fillet weld callout with dashed reference line, arrow, text 135 and Stitch.",
+  "human_observation": {
+    "visible_text": "135 Stitch",
+    "symbol_guess": "fillet",
+    "side_guess": "arrow_side",
+    "contour_guess": null,
+    "size_mm": null,
+    "length_mm": null,
+    "pitch_mm": null,
+    "count": null,
+    "visible_symbol_components": [
+      {
+        "component_id": "C1",
+        "description": "triangle weld symbol",
+        "guess": "fillet"
+      }
+    ]
+  },
+  "notes": [
+    "Second manual benchmark case.",
+    "Stitch indicates intermittent weld.",
+    "135 not interpreted as process without explicit context."
+  ],
+  "expected_output": {
+    "drawing_id": "image_002",
+    "source_file": "image_002.jpg",
+    "notes": [
+      "Manual extraction from real drawing",
+      "Reference text preserved without interpretation",
+      "Single fillet weld symbol observed"
+    ],
+    "welds": [
+      {
+        "joint_id": "J1",
+        "process": null,
+        "symbol": "fillet",
+        "side": "arrow_side",
+        "contour": null,
+        "size_mm": null,
+        "length_mm": null,
+        "pitch_mm": null,
+        "finish": null,
+        "count": null,
+        "reference_text": "135 Stitch",
+        "confidence": 0.78,
+        "notes": [
+          "Arrow indicates arrow side",
+          "Single fillet weld symbol identified",
+          "Stitch indicates intermittent weld",
+          "No explicit size shown",
+          "No explicit length or pitch shown"
+        ]
+      }
+    ]
+  }
+}

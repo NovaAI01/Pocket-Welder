@@ -1,0 +1,39 @@
+{
+  "symbols": [
+    {
+      "name": "fillet",
+      "category": "weld_symbol",
+      "notes": ["Triangle-based weld symbol"]
+    },
+    {
+      "name": "single_bevel_groove",
+      "category": "weld_symbol",
+      "notes": ["Single bevel groove / butt weld style symbol"]
+    },
+    {
+      "name": "square_groove",
+      "category": "weld_symbol",
+      "notes": ["Square groove butt weld symbol"]
+    }
+  ],
+  "sides": [
+    {
+      "name": "arrow_side",
+      "notes": ["Symbol on solid reference line"]
+    },
+    {
+      "name": "other_side",
+      "notes": ["Symbol on dashed reference line"]
+    },
+    {
+      "name": "both_sides",
+      "notes": ["Symbols or instructions indicate both sides"]
+    }
+  ],
+  "modifiers": [
+    {
+      "name": "typ",
+      "notes": ["Typical occurrence, not a count"]
+    }
+  ]
+}

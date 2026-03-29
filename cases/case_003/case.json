@@ -1,0 +1,62 @@
+{
+  "case_id": "case_003",
+  "drawing_id": "image_003",
+  "source_file": "image_003.jpg",
+  "status": "ground_truth_manual",
+  "region_description": "Butt weld callout with both sides indicated and instruction to grind flush on one side.",
+  "human_observation": {
+    "visible_text": "135 TYP",
+    "symbol_guess": "square_groove",
+    "side_guess": "both_sides",
+    "contour_guess": "flush_one_side",
+    "size_mm": null,
+    "length_mm": null,
+    "pitch_mm": null,
+    "count": null,
+    "visible_symbol_components": [
+      {
+        "component_id": "C1",
+        "description": "two parallel lines",
+        "guess": "square_groove"
+      }
+    ]
+  },
+  "notes": [
+    "Third manual benchmark case.",
+    "Explicit instruction text defines finish requirement.",
+    "Both sides weld indicated by dashed and solid reference line.",
+    "Flush condition applies to one side only."
+  ],
+  "expected_output": {
+    "drawing_id": "image_003",
+    "source_file": "image_003.jpg",
+    "notes": [
+      "Manual extraction from real drawing",
+      "Reference text preserved without interpretation",
+      "Single square groove weld symbol observed"
+    ],
+    "welds": [
+      {
+        "joint_id": "J1",
+        "process": null,
+        "symbol": "square_groove",
+        "side": "both_sides",
+        "contour": "flush_one_side",
+        "size_mm": null,
+        "length_mm": null,
+        "pitch_mm": null,
+        "finish": null,
+        "count": null,
+        "reference_text": "135 TYP",
+        "confidence": 0.78,
+        "notes": [
+          "Callout indicates both sides",
+          "Single square groove weld symbol identified",
+          "Flush required on one side",
+          "No explicit size shown",
+          "No explicit length or pitch shown"
+        ]
+      }
+    ]
+  }
+}

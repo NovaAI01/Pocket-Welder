@@ -1,0 +1,27 @@
+{
+  "drawing_id": "example_001",
+  "source_file": "example_drawing.pdf",
+  "notes": [
+    "Example output for Phase 1 schema validation."
+  ],
+  "welds": [
+    {
+      "joint_id": "J1",
+      "process": null,
+      "symbol": "square_groove",
+      "side": "both_sides",
+      "contour": "flush_one_side",
+      "size_mm": null,
+      "length_mm": null,
+      "pitch_mm": null,
+      "finish": "ground",
+      "count": 8,
+      "reference_text": "WELD BOTH SIDES OF SQUARE GROOVE, ONE SIDE GROUND FLUSH",
+      "confidence": 0.92,
+      "notes": [
+        "One side is explicitly finished flush/ground.",
+        "Weld count included as drawing-level instruction."
+      ]
+    }
+  ]
+}

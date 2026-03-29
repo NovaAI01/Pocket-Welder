@@ -1,0 +1,62 @@
+{
+  "case_id": "case_004",
+  "drawing_id": "image_004",
+  "source_file": "image_004.png",
+  "status": "ground_truth_manual",
+  "region_description": "Fillet weld with all-around indicator (circle at arrow) and text 135 TYP.",
+  "human_observation": {
+    "visible_text": "135 TYP",
+    "symbol_guess": "fillet",
+    "side_guess": "arrow_side",
+    "contour_guess": null,
+    "size_mm": null,
+    "length_mm": null,
+    "pitch_mm": null,
+    "count": null,
+    "all_around": true,
+    "visible_symbol_components": [
+      {
+        "component_id": "C1",
+        "description": "triangle weld symbol",
+        "guess": "fillet"
+      }
+    ]
+  },
+  "notes": [
+    "Fourth manual benchmark case.",
+    "Circle at arrow indicates all-around weld.",
+    "No stitch or contour specified."
+  ],
+  "expected_output": {
+    "drawing_id": "image_004",
+    "source_file": "image_004.png",
+    "notes": [
+      "Manual extraction from real drawing",
+      "Reference text preserved without interpretation",
+      "Single fillet weld symbol observed"
+    ],
+    "welds": [
+      {
+        "joint_id": "J1",
+        "process": null,
+        "symbol": "fillet",
+        "side": "arrow_side",
+        "contour": null,
+        "size_mm": null,
+        "length_mm": null,
+        "pitch_mm": null,
+        "finish": null,
+        "count": null,
+        "reference_text": "135 TYP",
+        "confidence": 0.78,
+        "notes": [
+          "Arrow indicates arrow side",
+          "Single fillet weld symbol identified",
+          "All-around weld indicated",
+          "No explicit size shown",
+          "No explicit length or pitch shown"
+        ]
+      }
+    ]
+  }
+}

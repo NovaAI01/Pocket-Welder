@@ -1,0 +1,70 @@
+{
+  "case_id": "case_001",
+  "drawing_id": "image_001",
+  "source_file": "image_001.jpg",
+  "status": "ground_truth_manual",
+  "region_description": "Weld callout with dashed and solid reference lines, arrow, text 135 TYP, and two weld symbol components separated by a vertical divider.",
+  "human_observation": {
+    "visible_text": "135 TYP",
+    "symbol_guess": null,
+    "side_guess": "other_side",
+    "contour_guess": null,
+    "size_mm": null,
+    "length_mm": null,
+    "pitch_mm": null,
+    "count": null,
+    "visible_symbol_components": [
+      {
+        "component_id": "C1",
+        "description": "two parallel lines",
+        "guess": "square_groove"
+      },
+      {
+        "component_id": "C2",
+        "description": "single bevel shape with one extended line",
+        "guess": "single_bevel_groove"
+      }
+    ]
+  },
+  "notes": [
+    "First manual benchmark case.",
+    "Visible symbol appears compound rather than a single simple weld symbol.",
+    "Reference text is preserved without interpretation.",
+    "TYP indicates repetition, not explicit count.",
+    "Current Phase 1 schema is too flat to fully represent compound symbol structure."
+  ],
+  "expected_output": {
+    "drawing_id": "image_001",
+    "source_file": "image_001.jpg",
+    "notes": [
+      "Manual extraction from real drawing",
+      "Reference text preserved without interpretation",
+      "Compound weld symbol observed: square groove plus single bevel groove"
+    ],
+    "welds": [
+      {
+        "joint_id": "J1",
+        "process": null,
+        "symbol": null,
+        "side": "other_side",
+        "contour": null,
+        "size_mm": null,
+        "length_mm": null,
+        "pitch_mm": null,
+        "finish": null,
+        "count": null,
+        "reference_text": "135 TYP",
+        "confidence": 0.78,
+        "notes": [
+          "Arrow indicates other side",
+          "Visible symbol appears to contain multiple components",
+          "Component 1 resembles square groove",
+          "Component 2 resembles single bevel groove",
+          "Single flat symbol field is insufficient for exact representation",
+          "No explicit size shown",
+          "No explicit length or pitch shown"
+        ]
+      }
+    ]
+  }
+}

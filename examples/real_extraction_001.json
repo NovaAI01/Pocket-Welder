@@ -1,0 +1,31 @@
+{
+  "drawing_id": "real_001",
+  "source_file": "your_uploaded_image.jpg",
+  "notes": [
+    "Manual extraction from real drawing",
+    "Reference text not interpreted beyond visibility"
+  ],
+  "welds": [
+    {
+      "joint_id": "J1",
+      "process": null,
+      "symbol": "single_bevel_groove",
+      "side": "other_side",
+      "contour": null,
+      "size_mm": null,
+      "length_mm": null,
+      "pitch_mm": null,
+      "finish": null,
+      "count": null,
+      "reference_text": "135 TYP",
+      "confidence": 0.9,
+      "notes": [
+        "Single bevel groove symbol identified",
+        "Arrow points to dashed line indicating other side",
+        "No weld size specified",
+        "Reference text present but not interpreted",
+        "TYP indicates repetition without count"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pocketwelder.local/schema/weld_instruction.schema.json",
+  "title": "Pocket Welder Phase 1 Output",
+  "description": "Canonical schema for structured weld instructions extracted from a drawing.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "drawing_id",
+    "welds"
+  ],
+  "properties": {
+    "drawing_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_file": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "welds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/weldInstruction"
+      }
+    }
+  },
+  "$defs": {
+    "weldInstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "joint_id",
+        "symbol",
+        "side",
+        "contour",
+        "size_mm",
+        "length_mm",
+        "pitch_mm",
+        "finish",
+        "count",
+        "notes"
+      ],
+      "properties": {
+        "joint_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "process": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "symbol": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "fillet",
+            "square_groove",
+            "single_bevel_groove",
+            "double_bevel_groove",
+            "single_v_groove",
+            "double_v_groove",
+            "single_u_groove",
+            "double_u_groove",
+            "plug",
+            "slot",
+            "spot",
+            "seam",
+            "flare_v_groove",
+            "flare_bevel_groove",
+            "surfacing",
+            "back",
+            "backing",
+            "edge",
+            null
+          ]
+        },
+        "side": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "arrow_side",
+            "other_side",
+            "both_sides",
+            "field_unknown",
+            null
+          ]
+        },
+        "contour": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "flush",
+            "convex",
+            "concave",
+            "flush_one_side",
+            "flush_both_sides",
+            null
+          ]
+        },
+        "size_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "length_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "pitch_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "finish": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "as_welded",
+            "ground",
+            "machined",
+            "chipped",
+            "hammered",
+            "unknown_finish",
+            null
+          ]
+        },
+        "count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "reference_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
