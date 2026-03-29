@@ -44,6 +44,18 @@ def build_notes(obs: dict) -> list[str]:
     text = obs.get("visible_text") or ""
     if "stitch" in text.lower():
         notes.append("Stitch indicates intermittent weld")
+    elif (
+        obs.get("count") is not None
+        and obs.get("length_mm") is not None
+        and obs.get("pitch_mm") is not None
+    ):
+        notes.append("Stitch indicates intermittent weld")
+
+    if obs.get("size_mm") is not None:
+        notes.append("Explicit weld size provided")
+
+    if obs.get("length_mm") is not None and obs.get("pitch_mm") is not None:
+        notes.append("Explicit weld length and pitch provided")
 
     if obs.get("all_around"):
         notes.append("All-around weld indicated")

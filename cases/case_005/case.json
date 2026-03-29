@@ -1,0 +1,63 @@
+{
+  "case_id": "case_005",
+  "drawing_id": "image_005",
+  "source_file": "image_005.webp",
+  "status": "ground_truth_manual",
+  "region_description": "Fillet weld with intermittent pattern 3 x 50 (50) and size 10 on solid reference line.",
+  "human_observation": {
+    "visible_text": "10 3 x 50 (50)",
+    "symbol_guess": "fillet",
+    "side_guess": "arrow_side",
+    "contour_guess": null,
+    "size_mm": 10,
+    "length_mm": 50,
+    "pitch_mm": 50,
+    "count": 3,
+    "all_around": false,
+    "visible_symbol_components": [
+      {
+        "component_id": "C1",
+        "description": "triangle weld symbol",
+        "guess": "fillet"
+      }
+    ]
+  },
+  "notes": [
+    "Fifth benchmark case.",
+    "Explicit weld size and intermittent weld pattern present.",
+    "Based on ISO/BS teaching diagram.",
+    "Fillet symbol is on the solid reference line, so weld is on the arrow side."
+  ],
+  "expected_output": {
+    "drawing_id": "image_005",
+    "source_file": "image_005.webp",
+    "notes": [
+      "Manual extraction from real drawing",
+      "Reference text preserved without interpretation",
+      "Single fillet weld symbol observed"
+    ],
+    "welds": [
+      {
+        "joint_id": "J1",
+        "process": null,
+        "symbol": "fillet",
+        "side": "arrow_side",
+        "contour": null,
+        "size_mm": 10,
+        "length_mm": 50,
+        "pitch_mm": 50,
+        "finish": null,
+        "count": 3,
+        "reference_text": "10 3 x 50 (50)",
+        "confidence": 0.78,
+        "notes": [
+          "Arrow indicates arrow side",
+          "Single fillet weld symbol identified",
+          "Stitch indicates intermittent weld",
+          "Explicit weld size provided",
+          "Explicit weld length and pitch provided"
+        ]
+      }
+    ]
+  }
+}
