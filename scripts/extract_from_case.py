@@ -41,8 +41,9 @@ def build_notes(obs: dict) -> list[str]:
                 notes.append(f"Component {idx} resembles {pretty}")
         notes.append("Single flat symbol field is insufficient for exact representation")
 
-    text = obs.get("visible_text") or ""
-    if "stitch" in text.lower():
+    text = (obs.get("visible_text") or "").lower()
+
+    if "stitch" in text:
         notes.append("Stitch indicates intermittent weld")
     elif (
         obs.get("count") is not None
@@ -54,8 +55,16 @@ def build_notes(obs: dict) -> list[str]:
     if obs.get("size_mm") is not None:
         notes.append("Explicit weld size provided")
 
+    if obs.get("size_type") == "throat" or "a" in text:
+        notes.append("Throat thickness specified (a-notation)")
+
+    if obs.get("secondary_size_type") == "leg" or "z" in text:
+        notes.append("Leg length also specified (z-notation)")
+
     if obs.get("length_mm") is not None and obs.get("pitch_mm") is not None:
         notes.append("Explicit weld length and pitch provided")
+    elif "x" in text and "(" in text and ")" in text:
+        notes.append("Pattern text present but not yet mapped")
 
     if obs.get("all_around"):
         notes.append("All-around weld indicated")
@@ -69,7 +78,11 @@ def build_notes(obs: dict) -> list[str]:
     if obs.get("size_mm") is None:
         notes.append("No explicit size shown")
 
-    if obs.get("length_mm") is None and obs.get("pitch_mm") is None:
+    if (
+        obs.get("length_mm") is None
+        and obs.get("pitch_mm") is None
+        and not ("x" in text and "(" in text and ")" in text)
+    ):
         notes.append("No explicit length or pitch shown")
 
     return notes

@@ -1,0 +1,66 @@
+{
+  "case_id": "case_006",
+  "drawing_id": "image_006",
+  "source_file": "image_006.png",
+  "status": "ground_truth_manual",
+  "region_description": "Fillet weld with a5 and z7 size notation and intermittent pattern text.",
+  "human_observation": {
+    "visible_text": "a5 z7 5 x 150 (250) 150",
+    "symbol_guess": "fillet",
+    "side_guess": "arrow_side",
+    "contour_guess": null,
+    "size_mm": 5,
+    "size_type": "throat",
+    "secondary_size_mm": 7,
+    "secondary_size_type": "leg",
+    "length_mm": null,
+    "pitch_mm": null,
+    "count": null,
+    "all_around": false,
+    "visible_symbol_components": [
+      {
+        "component_id": "C1",
+        "description": "triangle weld symbol",
+        "guess": "fillet"
+      }
+    ]
+  },
+  "notes": [
+    "Sixth benchmark case.",
+    "Both throat (a) and leg (z) sizes are specified.",
+    "Pattern text present but not parsed into structured numeric fields."
+  ],
+  "expected_output": {
+    "drawing_id": "image_006",
+    "source_file": "image_006.png",
+    "notes": [
+      "Manual extraction from real drawing",
+      "Reference text preserved without interpretation",
+      "Single fillet weld symbol observed"
+    ],
+    "welds": [
+      {
+        "joint_id": "J1",
+        "process": null,
+        "symbol": "fillet",
+        "side": "arrow_side",
+        "contour": null,
+        "size_mm": 5,
+        "length_mm": null,
+        "pitch_mm": null,
+        "finish": null,
+        "count": null,
+        "reference_text": "a5 z7 5 x 150 (250) 150",
+        "confidence": 0.78,
+        "notes": [
+          "Arrow indicates arrow side",
+          "Single fillet weld symbol identified",
+          "Explicit weld size provided",
+          "Throat thickness specified (a-notation)",
+          "Leg length also specified (z-notation)",
+          "Pattern text present but not yet mapped"
+        ]
+      }
+    ]
+  }
+}
