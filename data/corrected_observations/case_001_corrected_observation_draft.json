@@ -1,0 +1,21 @@
+{
+  "source_draft": "/home/jack/Dev/pocket_welder/data/observation_drafts/case_001_corrected_observation_draft.md",
+  "adapter_version": "v0.1",
+  "case_id": "case_001_prefill_v4",
+  "source_image": "/home/jack/Dev/pocket_welder/inputs/image_001.jpg",
+  "human_observation": {
+    "visible_text": null,
+    "symbol_guess": "compound_groove",
+    "side_guess": null,
+    "contour_guess": null,
+    "size_mm": null,
+    "length_mm": null,
+    "pitch_mm": null,
+    "count": null,
+    "visible_symbol_components": []
+  },
+  "adapter_notes": [
+    "confidence_note: visually confirmed as compound symbol",
+    "free_observation_notes: [Add direct visual observations here]"
+  ]
+}
